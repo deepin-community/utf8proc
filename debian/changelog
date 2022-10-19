@@ -1,0 +1,167 @@
+utf8proc (2.7.0-3) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Julia Team <pkg-julia-devel@lists.alioth.debian.org>  Mon, 27 Jun 2022 13:09:13 +0800
+
+utf8proc (2.7.0-3) unstable; urgency=medium
+
+  * Upstream's Makefile is not parallel-safe,
+    build with --no-parallel for now
+
+ -- Graham Inggs <ginggs@debian.org>  Mon, 27 Dec 2021 07:47:18 +0000
+
+utf8proc (2.7.0-2) unstable; urgency=medium
+
+  * Use GraphemeBreakTest.txt as is, re-enable graphemetest
+  * Use grep to generate Uppercase.txt and Lowercase.txt
+  * Drop build-dependencies on perl and ruby
+  * Adapt autopkgtest so it is triggered by changes to unicode-data
+
+ -- Graham Inggs <ginggs@debian.org>  Fri, 24 Dec 2021 06:47:34 +0000
+
+utf8proc (2.7.0-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * debian/copyright: use spaces rather than tabs to start continuation lines.
+  * Set upstream metadata fields: Bug-Submit.
+
+  [ Graham Inggs ]
+  * New upstream release
+  * Refresh use-unicode-data.patch
+  * Build with unicode-data 14.0 (Closes: #995579)
+  * Add build-dependency on ruby
+  * Skip graphemetest that never completes
+  * Update libutf8proc2.symbols with new symbols from 2.6.0
+  * Install the pkgconfig file from libutf8proc-dev.install
+    instead of debian/rules
+  * Switch to debhelper 13
+  * Bump Standards-Version to 4.6.0, no changes
+
+ -- Graham Inggs <ginggs@debian.org>  Tue, 21 Dec 2021 14:29:13 +0000
+
+utf8proc (2.5.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Refresh use-unicode-data.patch
+  * Build with unicode-data 13.0 (Closes: #954131)
+  * Set Rules-Requires-Root: no
+  * Add Build-Depends-Package to libutf8proc2.symbols
+  * Bump Standards-Version to 4.5.0, no changes
+
+ -- Graham Inggs <ginggs@debian.org>  Mon, 30 Mar 2020 08:12:49 +0000
+
+utf8proc (2.4.0-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields:
+    Bug-Database, Repository, Repository-Browse.
+  * Update standards version to 4.4.1, no changes needed.
+
+  [ Mo Zhou ]
+  * Update my mail address in control and copyright.
+  * Initialize autopkgtest: compile and run upstream tests.
+
+ -- Mo Zhou <lumin@debian.org>  Tue, 07 Jan 2020 14:56:30 +0800
+
+utf8proc (2.4.0-1) unstable; urgency=medium
+
+  * New upstream version 2.4.0
+  * Bump Standards-Version to 4.4.0 (no change).
+  * Delete d/compat in favor of debhelper-compat (= 11).
+  * Update patches:
+    * Rebase use-unicode-data.patch
+    - Remove unicode-data-12.1.0pre1.patch
+    - Remove utf8proc-unicode-version.patch
+
+ -- Mo Zhou <cdluminate@gmail.com>  Wed, 21 Aug 2019 14:41:53 +0000
+
+utf8proc (2.3.0-1) unstable; urgency=medium
+
+  * New upstream version 2.3.0 (Closes: #927941)
+  * Bump unicode-data requirement to (>= 12.1) && (<< 12.2).
+  * Refresh use-unicode-data.patch; Remove pass-hardening-flags.patch (merged).
+  * Patch: update utf8proc_data.c against unicode-data 12.1.0~pre1.
+  * Patch: update unicode-data version strings to 12.1.0
+  * Patch: upstream didn't bump minor version in build system and header.
+  * Install the newly-added pkgconfig file. (Closes: #927260)
+  * Add a new symbol.
+
+ -- Mo Zhou <cdluminate@gmail.com>  Sat, 27 Apr 2019 08:12:00 +0000
+
+utf8proc (2.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop patches no longer needed, refresh remaining
+  * Update debian/libutf8proc2.symbols
+  * Update debian/copyright
+  * New patch pass-hardening-flags.patch
+
+ -- Graham Inggs <ginggs@debian.org>  Fri, 27 Jul 2018 10:17:12 +0000
+
+utf8proc (2.1.1-1) unstable; urgency=medium
+
+  [ Peter Colberg ]
+  * Update Vcs-* fields for move to salsa.debian.org
+
+  [ Graham Inggs ]
+  * New upstream release (Closes: #902902)
+  * Update upstream URLs for move to JuliaStrings
+  * Refresh patches
+  * Drop symbols of generated const tables, see upstream PR #100
+  * Add Mo Zhou to uploaders
+  * Switch to debhelper 11
+  * Trim trailing whitespace from debian/changelog
+  * Drop unnecessary get-orig-source target from debian/rules
+  * Bump Standards-Version to 4.1.5
+  * Switch to unicode-data 11 (Closes: #903381)
+  * Regenerate utf8proc_data.c from unicode-data 11
+  * Skip failing grapheme break tests
+
+ -- Graham Inggs <ginggs@debian.org>  Mon, 09 Jul 2018 13:43:06 +0000
+
+utf8proc (2.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Switch to unicode-data 10 (Closes: #867105)
+  * Regenerate utf8proc_data.c from unicode-data 10
+  * Update debian/libutf8proc2.symbols
+  * Switch to debhelper 10
+  * Enable all hardening flags
+  * Bump Standards-Version to 4.0.0
+  * Update copyright, use https
+
+ -- Graham Inggs <ginggs@debian.org>  Sat, 08 Jul 2017 10:47:15 +0200
+
+utf8proc (2.0.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Peter Colberg <peter@colberg.org>  Sat, 30 Jul 2016 23:21:18 -0400
+
+utf8proc (2.0.1-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #829236)
+  * Refresh patch
+  * Bump SONAME to libutf8proc2
+  * Update debian/libutf8proc2.symbols
+  * Update Vcs-* fields to use https
+  * Enable bindnow hardening flag
+  * Bump Standards-Version to 3.9.8
+  * Add debian/gbp.conf for pristine-tar
+  * Build depend on unicode-data >= 9.0 and << 9.1 for tests
+
+ -- Peter Colberg <peter@colberg.org>  Sat, 16 Jul 2016 17:15:58 -0400
+
+utf8proc (1.3.1-2) unstable; urgency=medium
+
+  * Relax build-depends version for unicode-data.
+
+ -- Peter Colberg <peter@colberg.org>  Fri, 06 Nov 2015 13:26:14 -0500
+
+utf8proc (1.3.1-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #803681)
+
+ -- Peter Colberg <peter@colberg.org>  Sun, 01 Nov 2015 13:30:40 -0500
