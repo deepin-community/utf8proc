@@ -1,8 +1,17 @@
-utf8proc (2.7.0-3) UNRELEASED; urgency=medium
+utf8proc (2.8.0-1) unstable; urgency=medium
 
-  * update
+  * New upstream version 2.8.0
+  * Remove patches for unicode-data 15. No longer needed.
+  * Refresh remaining patches.
 
- -- Debian Julia Team <pkg-julia-devel@lists.alioth.debian.org>  Mon, 27 Jun 2022 13:09:13 +0800
+ -- Mo Zhou <lumin@debian.org>  Wed, 16 Nov 2022 14:03:50 -0500
+
+utf8proc (2.7.0-4) unstable; urgency=medium
+
+  * Bump B-D to Unicode-data 15.0
+  * Add patches to support Unicode-data 15.0.0 (Closes: #1019923)
+
+ -- Mo Zhou <lumin@debian.org>  Wed, 21 Sep 2022 10:22:38 -0400
 
 utf8proc (2.7.0-3) unstable; urgency=medium
 
